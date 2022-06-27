@@ -16,7 +16,7 @@ export function showLoadingIcon(element) {
   style = document.createElement("style");
   style.setAttribute("id", "spinner-css");
 
-  style.innerHTML = getSpinnerCss(spinnerColor || "grey");
+  style.innerHTML = getSpinnerCss(spinnerColor || "rgb(200,200,200)");
   element.getRootNode().appendChild(style);
 
   const container = d3
@@ -125,6 +125,7 @@ export default async function loadData(
 
     cache = data;
     cacheKey = _cacheKey;
+
   } catch (error) {
     if (mainElement) {
       const detail =
@@ -193,52 +194,52 @@ function getSpinnerCss(color) {
   @keyframes load {
     0%,
     100% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_1), 0.5em -0.45em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
-        0.45em 0.4em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
-        -0.45em 0.45em 0 0em var(--dot_3),-0.7em 0em 0 0em var(--dot_4),
-        -0.45em -0.45em 0 0em var(--dot_2);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_1), 0.5em -0.5em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
+        0.5em 0.5em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
+        -0.5em 0.5em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_3),
+        -0.5em -0.5em 0 0em var(--dot_2);
     }
     12.5% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_2), 0.5em -0.45em 0 0em var(--dot_1), 0.7em 0em 0 0em var(--dot_4),
-        0.45em 0.4em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
-        -0.45em 0.45em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
-        -0.45em -0.45em 0 0em var(--dot_3);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_2), 0.5em -0.5em 0 0em var(--dot_1), 0.7em 0em 0 0em var(--dot_4),
+        0.5em 0.5em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
+        -0.5em 0.5em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
+        -0.5em -0.5em 0 0em var(--dot_3);
     }
     25% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_3), 0.5em -0.45em 0 0em var(--dot_2), 0.7em 0em 0 0em var(--dot_1),
-        0.5em 0.45em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
-        -0.5em 0.45em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
-        -0.5em -0.45em 0 0em var(--dot_4);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_3), 0.5em -0.5em 0 0em var(--dot_2), 0.7em 0em 0 0em var(--dot_1),
+        0.5em 0.5em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
+        -0.5em 0.5em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
+        -0.5em -0.5em 0 0em var(--dot_4);
     }
     37.5% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.45em 0 0em var(--dot_3), 0.7em 0em 0 0em var(--dot_2),
-        0.5em 0.45em 0 0em var(--dot_1), 0em 0.7em 0 0em var(--dot_4),
-        -0.5em 0.45em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
-        -0.5em -0.45em 0 0em var(--dot_4);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.5em 0 0em var(--dot_3), 0.7em 0em 0 0em var(--dot_2),
+        0.5em 0.5em 0 0em var(--dot_1), 0em 0.7em 0 0em var(--dot_4),
+        -0.5em 0.5em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
+        -0.5em -0.5em 0 0em var(--dot_4);
     }
     50% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.45em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_3),
-        0.5em 0.45em 0 0em var(--dot_2), 0em 0.7em 0 0em var(--dot_1),
-        -0.5em 0.45em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
-        -0.5em -0.45em 0 0em var(--dot_4);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.5em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_3),
+        0.5em 0.5em 0 0em var(--dot_2), 0em 0.7em 0 0em var(--dot_1),
+        -0.5em 0.5em 0 0em var(--dot_4),-0.7em 0em 0 0em var(--dot_4),
+        -0.5em -0.5em 0 0em var(--dot_4);
     }
     62.5% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.45em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
-        0.5em 0.45em 0 0em var(--dot_3), 0em 0.7em 0 0em var(--dot_2),
-        -0.5em 0.45em 0 0em var(--dot_1),-0.7em 0em 0 0em var(--dot_4),
-        -0.5em -0.45em 0 0em var(--dot_4);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.5em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
+        0.5em 0.5em 0 0em var(--dot_3), 0em 0.7em 0 0em var(--dot_2),
+        -0.5em 0.5em 0 0em var(--dot_1),-0.7em 0em 0 0em var(--dot_4),
+        -0.5em -0.5em 0 0em var(--dot_4);
     }
     75% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.45em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
-        0.5em 0.45em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_3),
-        -0.5em 0.45em 0 0em var(--dot_2),-0.7em 0em 0 0em var(--dot_1),
-        -0.5em -0.45em 0 0em var(--dot_4);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.5em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
+        0.5em 0.5em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_3),
+        -0.5em 0.5em 0 0em var(--dot_2),-0.7em 0em 0 0em var(--dot_1),
+        -0.5em -0.5em 0 0em var(--dot_4);
     }
     87.5% {
-      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.45em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
-        0.5em 0.45em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
-        -0.5em 0.45em 0 0em var(--dot_3),-0.7em 0em 0 0em var(--dot_2),
-        -0.5em -0.45em 0 0em var(--dot_1);
+      box-shadow: 0em -0.7em 0em 0em var(--dot_4), 0.5em -0.5em 0 0em var(--dot_4), 0.7em 0em 0 0em var(--dot_4),
+        0.5em 0.5em 0 0em var(--dot_4), 0em 0.7em 0 0em var(--dot_4),
+        -0.5em 0.5em 0 0em var(--dot_3),-0.7em 0em 0 0em var(--dot_2),
+        -0.5em -0.5em 0 0em var(--dot_1);
     }
   `;
 }
